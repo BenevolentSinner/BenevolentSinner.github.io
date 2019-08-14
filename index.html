@@ -1,23 +1,110 @@
+<?php
+    include_once('template_top.php');
+?>
+
 <!DOCTYPE html>
-<html>
-<body>
 
-<p>Enter the march time in minutes: <input type="number" id="myMinutes" value="">and seconds: <input type="number" id="mySeconds" value="">
-	Enter the speed you would like to arrive: <input type="number" id="arrival" value =""></p>
-<button onclick="myFunction()">Calculate speeds</button>
+<html lang="en">
+    <head>
+        <title>Bittigreen</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="Style.css">
+    </head>
+    <body>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#campaigns">Campaigns</a></li>
+            <li><a data-toggle="tab" href="#contact">Contact Us</a></li>
+        </ul>
 
-<p id="halfspeed"></p>
-<p id="quarterspeed"></p>
-
-<script>
-function myFunction() {
-	var m = document.getElementById("myMinutes").value;
-    var s = document.getElementById("mySeconds").value;
-    var a = document.getElementById("arrival").value;
-    document.getElementById("halfspeed").innerHTML = "Use _"+ Math.ceil(Math.log(a/((60*m)+s*1))/Math.log(.5))+"_ 50% speeds to get there in less than " + a + " seconds";
-    document.getElementById("quarterspeed").innerHTML = "Use _"+ Math.ceil(Math.log(a/((60*m)+s*1))/Math.log(.75))+"_ 25% speeds to get there in less than " + a + " seconds";
-}
-</script>
-
-</body>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h2>Featured Campaigns</h2>
+                <div class="row">
+                    <div class="col-xs-4">
+                        Cats-R-Us
+                        <img class="img-responsive" src="http://www.pageresource.com/wallpapers/wallpaper/cats-cute-cat-animal-cute-grass-photo.jpg">
+                    </div>
+                    <div class="col-xs-4">
+                        The Cool Kids
+                        <img class="img-responsive" src="http://pre15.deviantart.net/f4cc/th/pre/f/2008/052/5/4/the_cool_kids_by_msch.jpg">
+                    </div>
+                    <div class="col-xs-4">
+                        Dog Central
+                        <img class="img-responsive" src="http://davidfeldmanshow.com/wp-content/uploads/2014/01/dogs-wallpaper.jpg">
+                    </div>
+                </div>
+                <h2>Recommended Campaigns</h2>
+                <div class="row">
+                    <div class="col-xs-2">
+                        campaign
+                    </div>
+                    <div class="col-xs-2">
+                        campaign
+                    </div>
+                    <div class="col-xs-2">
+                        campaign
+                    </div>
+                    <div class="col-xs-2">
+                        campaign
+                    </div>
+                    <div class="col-xs-2">
+                        campaign
+                    </div>
+                    <div class="col-xs-2">
+                        campaign
+                    </div>
+                </div>
+                <div class="main-bottom-half" id="howitworks">
+                    <h1>How it all works</h1>
+                </div>
+        </div>
+            <div id="campaigns" class="tab-pane fade">
+                <h2>Campaigns</h2>
+                    <p>start ur campaign now</p>
+            </div>
+            <div id="contact" class="tab-pane fade">
+                    <h2>Contact us, get started!</h2>
+                   
+                        <h3>Inquiry Submission Form:</h3>
+                        <form action="action_page.php">
+                            Valid email:<br>
+                            <input type="text" name="email"><br>
+                            Affiliation:<br>
+                            <input type="text" name="affiliation"><br>
+                            Title:<br>
+                            <input type="text" name="title"><br>
+                            Description:<br>
+                            <textarea name="description" rows="10" cols="80"></textarea><br>
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
+                        <h1>Past Partners:</h1>
+                        <a href="proposal.html" class="btn btn-success" role="button">Submit a Campaign Proposal</a>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                Cats-R-Us
+                                <img class="img-responsive" src="http://www.pageresource.com/wallpapers/wallpaper/cats-cute-cat-animal-cute-grass-photo.jpg">
+                            </div>
+                            <div class="col-xs-4">
+                                The Cool Kids
+                                <img class="img-responsive" src="http://pre15.deviantart.net/f4cc/th/pre/f/2008/052/5/4/the_cool_kids_by_msch.jpg">
+                            </div>
+                            <div class="col-xs-4">
+                                Dog Central
+                                <img class="img-responsive" src="http://davidfeldmanshow.com/wp-content/uploads/2014/01/dogs-wallpaper.jpg">
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <?php
+                include_once('template_bottom.php');
+            ?>
+        </div>
+    </body>
+   
 </html>
